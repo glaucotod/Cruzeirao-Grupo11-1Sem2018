@@ -5,21 +5,20 @@
 	xmlns:p="http://primefaces.org/ui">
 	<h:form>
 		<p:panelMenu>
-		    <p:submenu label="#{msg['pages.comuns.menuLateral.inicio']}" >
-			   <p:menuitem value="#{msg['pages.inicio.menu']}" url="inicio.xhtml" />
-			</p:submenu>
-		
+
+
 			<p:submenu label="#{msg['pages.comuns.menuLateral.gerencial']}">
 				
 				<p:menuitem value="#{msg['pages.cadastroUsuario.menu']}" url="cadastroUsuario.xhtml" />
 				<p:menuitem value="#{msg['pages.cadastroEquipe.menu']}" url="cadastroEquipe.xhtml" />
 				<p:menuitem value="#{msg['pages.cadastroJuiz.menu']}" url="cadastroJuiz.xhtml" />
+				<p:menuitem value="#{msg['pages.cadastroCategoria.menu']}" url="cadastroCategoria.xhtml" />
+				<p:menuitem value="#{msg['pages.cadastroLocal.menu']}" url="cadastroLocal.xhtml" />
 				<p:menuitem value="#{msg['pages.cadastroCampeonato.menu']}" url="cadastroCampeonato.xhtml" />
+				<p:menuitem value="#{msg['pages.cadastroInscricao.menu']}" url="cadastroInscricao.xhtml" />
+				<p:menuitem value="#{msg['pages.cadastroGrupo.menu']}" url="cadastroGrupo.xhtml" />
+				<p:menuitem value="#{msg['pages.cadastroRodada.menu']}" url="cadastroRodada.xhtml" />
 				
-				<p:menuitem value="#{msg['pages.cadastroAluno.menu']}" url="cadastroAluno.xhtml" />
-				<p:menuitem value="#{msg['pages.cadastroProfessor.menu']}" url="cadastroProfessor.xhtml" />
-				<p:menuitem value="#{msg['pages.tela2.menu']}" url="tela2.xhtml" />
-				<p:menuitem value="#{msg['pages.tela3.menu']}" url="tela3.xhtml" />
 	       </p:submenu>
 					
 			<p:submenu label="#{msg['pages.comuns.menuLateral.options']}">
