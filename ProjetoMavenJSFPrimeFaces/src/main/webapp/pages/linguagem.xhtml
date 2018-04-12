@@ -7,23 +7,23 @@
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:ui2="http://java.sun.com/jsf/facelets"
 	xmlns:tm="http://java.sun.com/jsf/composite/terminal/1_0/components">
-	
+
 	<ui:define name="title">
 		<h:outputText value="#{msg['pages.linguagem.title']}" />
 	</ui:define>
-	
+
 
 	<ui:define name="principal">
-	 	 
-	   	 <h:form >
-            <p:outputLabel value="#{msg['pages.linguagem.lingua']} "/>
-            
-            <p:selectOneMenu value="#{localeBean.language}" onchange="submit()" >
-                <f:selectItem itemValue="en" itemLabel="English" />
-                <f:selectItem itemValue="pt" itemLabel="Português" />
-            </p:selectOneMenu>
-        </h:form>
-	   
+
+		<h:form>
+			<p:outputLabel value="#{msg['pages.linguagem.lingua']} " />
+
+			<p:selectOneMenu value="#{localeBean.language}" onchange="submit()">
+				<f:selectItem itemValue="en" itemLabel="English" />
+				<f:selectItem itemValue="pt" itemLabel="Português" />
+			</p:selectOneMenu>
+		</h:form>
+
 	</ui:define>
 </ui:composition>
 

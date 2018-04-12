@@ -3,29 +3,94 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui">
+	
 	<h:form>
+	
 		<p:panelMenu>
-		    <p:submenu label="#{msg['pages.comuns.menuLateral.inicio']}" >
-			   <p:menuitem value="#{msg['pages.inicio.menu']}" url="inicio.xhtml" />
+			<p:submenu label="#{msg['pages.comuns.menuLateral.inicio']}">
+				<p:menuitem value="#{msg['pages.inicio.menu']}" url="inicio.xhtml" />
+				<p:menuitem value="#{msg['pages.login.menu']}" url="login.xhtml" />
 			</p:submenu>
 		
-			<p:submenu label="#{msg['pages.comuns.menuLateral.gerencial']}">
+
+			
+			
+				<p:submenu label="#{msg['pages.cadastroCampeonato.menu']}">
+					<p:menuitem value="#{msg['pages.cadastroCampeonato.cadastrar']}" url="cadastroCampeonato.xhtml"/>
+					<p:menuitem value="#{msg['pages.cadastroCampeonato.ver']}" url="cadastroCampeonatoVer.xhtml"/>
+				    <p:menuitem value="#{msg['pages.cadastroCampeonato.ver']}" url="cadastroCampeonatoVerUsuario.xhtml"/>
+				</p:submenu>
 				
-				<p:menuitem value="#{msg['pages.cadastroUsuario.menu']}" url="cadastroUsuario.xhtml" />
-				<p:menuitem value="#{msg['pages.cadastroEquipe.menu']}" url="cadastroEquipe.xhtml" />
-				<p:menuitem value="#{msg['pages.cadastroJuiz.menu']}" url="cadastroJuiz.xhtml" />
-				<p:menuitem value="#{msg['pages.cadastroCampeonato.menu']}" url="cadastroCampeonato.xhtml" />
 				
-				<p:menuitem value="#{msg['pages.cadastroAluno.menu']}" url="cadastroAluno.xhtml" />
-				<p:menuitem value="#{msg['pages.cadastroProfessor.menu']}" url="cadastroProfessor.xhtml" />
-				<p:menuitem value="#{msg['pages.tela2.menu']}" url="tela2.xhtml" />
-				<p:menuitem value="#{msg['pages.tela3.menu']}" url="tela3.xhtml" />
-	       </p:submenu>
-					
-			<p:submenu label="#{msg['pages.comuns.menuLateral.options']}">
-				<p:menuitem value="#{msg['pages.linguagem.menu']}" url="linguagem.xhtml" />
-	       </p:submenu>
+				
+				<p:submenu label="#{msg['pages.cadastroCategoria.menu']}" rendered="#{request.isUserInRole('ADMIN')}">
+					<p:menuitem value="#{msg['pages.cadastroCategoria.cadastrar']}" url="cadastroCategoria.xhtml" />
+					<p:menuitem value="#{msg['pages.cadastroCategoria.ver']}" url="cadastroCategoriaVer.xhtml"/>
+				    <p:menuitem value="#{msg['pages.cadastroCategoria.ver']}" url="cadastroCategoriaVerUsuario.xhtml"/>
+				</p:submenu>
+				
+				
+				<p:submenu label="#{msg['pages.cadastroCategoria.menu']}" rendered="#{request.isUserInRole('COMUM')}">
+				    <p:menuitem value="#{msg['pages.cadastroCategoria.ver']}" url="cadastroCategoriaVerUsuario.xhtml"/>
+				</p:submenu>
+				
+
+                <p:submenu label="#{msg['pages.cadastroEquipe.menu']}">
+				    <p:menuitem value="#{msg['pages.cadastroEquipe.cadastrar']}" url="cadastroEquipe.xhtml" />
+				       <p:menuitem value="#{msg['pages.cadastroEquipe.validar']}" url="validacoes.xhtml" />
+				</p:submenu>
+				
 		
+			
+			
+			
+			
+			
+				<p:submenu label="#{msg['pages.cadastroCampeonato.menu']}">
+				    <p:menuitem value="#{msg['pages.cadastroCampeonato.ver']}" url="cadastroCampeonatoVerUsuario.xhtml"/>
+				</p:submenu>
+				
+				
+				
+				<p:submenu label="#{msg['pages.cadastroCategoria.menu']}" rendered="#{request.isUserInRole('COMUM')}">
+				    <p:menuitem value="#{msg['pages.cadastroCategoria.ver']}" url="cadastroCategoriaVerUsuario.xhtml"/>
+				</p:submenu>
+				
+
+                <p:submenu label="#{msg['pages.cadastroEquipe.menu']}" rendered="#{request.isUserInRole('COMUM')}">
+				    <p:menuitem value="#{msg['pages.cadastroEquipe.cadastrar']}" url="cadastroEquipe.xhtml" />
+				       <p:menuitem value="#{msg['pages.cadastroEquipe.validar']}" url="validacoes.xhtml" />
+				</p:submenu>
+				
+			
+			
+
+			<p:submenu label="#{msg['pages.comuns.menuLateral.chaves']}" rendered="#{request.isUserInRole('ADMIN')}">
+				<p:menuitem value="#{msg['pages.criarChaves.menu']}"
+					url="criarChaves.xhtml" />
+				<p:menuitem value="#{msg['pages.verChaves.menu']}"
+					url="verChaves.xhtml" />
+			</p:submenu>
+
+			<p:submenu label="#{msg['pages.comuns.menuLateral.jogos']}">
+				<p:menuitem value="#{msg['pages.verTabelaCompleta.menu']}"
+					url="verTabelaCompleta.xhtml" />
+				<p:menuitem value="#{msg['pages.verUltimosResultados.menu']}"
+					url="verUltimosResultados.xhtml" />
+				<p:menuitem value="#{msg['pages.verLocais.menu']}"
+					url="verLocais.xhtml" />
+			</p:submenu>
+
+<p:submenu label="#{msg['pages.comuns.menuLateral.definirADM']}" rendered="#{request.isUserInRole('ADMIN')}">
+				<p:menuitem value="#{msg['pages.definirADM.menu']}"
+					url="definirADM.xhtml" />
+			</p:submenu>
+			
+			<p:submenu label="#{msg['pages.comuns.menuLateral.options']}">
+				<p:menuitem value="#{msg['pages.linguagem.menu']}"
+					url="linguagem.xhtml" />
+			</p:submenu>
+
 		</p:panelMenu>
 	</h:form>
 </ui:composition>
