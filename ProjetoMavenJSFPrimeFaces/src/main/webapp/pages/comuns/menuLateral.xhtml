@@ -10,10 +10,11 @@
 			<p:submenu label="#{msg['pages.comuns.menuLateral.inicio']}">
 				<p:menuitem value="#{msg['pages.inicio.menu']}" url="inicio.xhtml" />
 				<p:menuitem value="#{msg['pages.login.menu']}" url="login.xhtml" />
+				<p:menuitem value="#{msg['pages.cadastroUsuario.menu']}" url="cadastroUsuario.xhtml" />
 			</p:submenu>
 		
 
-			
+			<p:submenu label="#{msg['pages.comuns.menuLateral.gerenciamento']}" rendered="#{request.isUserInRole('ADMIN')}">
 			
 				<p:submenu label="#{msg['pages.cadastroCampeonato.menu']}">
 					<p:menuitem value="#{msg['pages.cadastroCampeonato.cadastrar']}" url="cadastroCampeonato.xhtml"/>
@@ -40,11 +41,12 @@
 				       <p:menuitem value="#{msg['pages.cadastroEquipe.validar']}" url="validacoes.xhtml" />
 				</p:submenu>
 				
-		
+			</p:submenu>
 			
 			
 			
 			
+			<p:submenu label="#{msg['pages.comuns.menuLateral.gerenciamento']}" rendered="#{request.isUserInRole('COMUM')}">
 			
 				<p:submenu label="#{msg['pages.cadastroCampeonato.menu']}">
 				    <p:menuitem value="#{msg['pages.cadastroCampeonato.ver']}" url="cadastroCampeonatoVerUsuario.xhtml"/>
@@ -62,6 +64,7 @@
 				       <p:menuitem value="#{msg['pages.cadastroEquipe.validar']}" url="validacoes.xhtml" />
 				</p:submenu>
 				
+			</p:submenu>
 			
 			
 
@@ -94,4 +97,3 @@
 		</p:panelMenu>
 	</h:form>
 </ui:composition>
-
