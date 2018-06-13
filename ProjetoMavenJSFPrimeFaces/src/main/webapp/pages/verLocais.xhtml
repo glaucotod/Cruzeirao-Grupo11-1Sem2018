@@ -6,6 +6,47 @@
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:ui2="http://java.sun.com/jsf/facelets"
 	xmlns:tm="http://java.sun.com/jsf/composite/terminal/1_0/components">
+	
+	<ui:define name="title">
+		<h:outputText value="#{msg['pages.verLocais.title']}" />
+	</ui:define>
+	
+	<ui:define name="principal">
+		<h1><p:outputLabel value="#{msg['pages.verLocais.title']}"/></h1>
+		
+		<p:dataTable var="aux"
+					 value="#{localManagedBeans.localAtual.locais}"
+					 id="tabelaLocal"
+					 editable="true" paginator="true"
+					 rows="5"
+					 paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                	 rowsPerPageTemplate="5,10,15">
+                	 
+                	 <p:ajax event="rowEdit" listener="#{localManagedBeans.onRowEdit}" update="tabelaLocal" />
+                	 
+                	 <p:column filterBy="#{aux.endereco}" headerText="#{msg['pages.cadastroLocal.endereco']}">
+						<p:cellEditor>
+							<f:facet name="output">
+								<p:outputLabel value="#{aux.endereco}"/>
+							</f:facet>
+							<f:facet name="input">
+								<p:inputText value="#{aux.endereco}"/>
+							</f:facet>
+						</p:cellEditor>
+					</p:column>
+					
+					<p:column style="width:70px" headerText="#{msg['pages.comuns.menuLateral.options']}">
+					
+						<p:rowEditor />
+						
+						<p:commandLink id="remover" styleClass="ui-icon ui-icon-trash"
+							style="text-align:center"
+							actionListener="#{localManagedBeans.removerLocal(aux)}"
+							update="tabelaLocal" />
+		  			</p:column>
+                	 
+        </p:dataTable>
+	</ui:define>		
 
 
 </ui:composition>

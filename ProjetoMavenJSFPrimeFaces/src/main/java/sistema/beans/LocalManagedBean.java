@@ -8,6 +8,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import org.primefaces.context.RequestContext;
+import org.primefaces.event.RowEditEvent;
 
 import sistema.modelos.Local;
 import sistema.service.LocalService;
@@ -101,5 +102,10 @@ public class LocalManagedBean implements Serializable{
 
 	public void setService(LocalService service) {
 		this.service = service;
-	}	
+	}
+	
+	public void onRowEdit(RowEditEvent event) {
+		Local local = ((Local) event.getObject());
+		service.salvar(local);
+	}
 }
