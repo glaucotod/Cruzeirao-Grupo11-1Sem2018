@@ -3,11 +3,11 @@
 	<persistence-unit name="ProjetoMavenJSFPrimeFaces" transaction-type="RESOURCE_LOCAL">
 		<class>sistema.modelos.Campeonato</class>
 		<class>sistema.modelos.Categoria</class>
-		<class>sistema.modelos.Usuario</class>
 		<class>sistema.modelos.Equipe</class>
-		<class>sistema.modelos.Local</class>
-		<class>sistema.modelos.Inscrito</class>
 		<class>sistema.modelos.Inscricao</class>
+		<class>sistema.modelos.Inscrito</class>
+		<class>sistema.modelos.Local</class>
+		<class>sistema.modelos.Usuario</class>
 		<properties>
 			<property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/sample;create=true"/>
 			<property name="javax.persistence.jdbc.user" value="user"/>
